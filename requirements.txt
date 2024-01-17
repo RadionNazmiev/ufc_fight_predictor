@@ -1,0 +1,7 @@
+requests
+numpy
+pandas
+datetime 
+matplotlib==3.7.4
+bs4
+
