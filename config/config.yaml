@@ -1,0 +1,29 @@
+WEIGHT_CLASSES:
+  125: Flyweight
+  135: Bantamweight
+  145: Featherweight
+  155: Lightweight
+  170: Welterweight
+  185: Middleweight
+  205: Light Heavyweight
+  265: Heavyweight
+
+FINAL_FRAME_COLUMNS:     
+  - event
+  - date
+  - favourite
+  - stance_f
+  - underdog
+  - stance_u
+  - height_d
+  - weight
+  - odds_d
+  - str_lan_d
+  - str_acc_d
+  - str_abs_d
+  - str_def_d
+  - tkdn_avg_d
+  - tkdn_acc_d
+  - tkdn_def_d
+  - sub_avg_d
+  - result
