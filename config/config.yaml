@@ -88,8 +88,8 @@ COLUMNS_TO_REMOVE:
   - f2_total_ground
 
 NEW_ORDER_2:
-  - event_country
   - event_date
+  - event_country
   - is_interim_fight
   - is_title_fight
   - is_women_fight
@@ -156,3 +156,65 @@ NEW_ORDER_2:
   - f2_ground_str_thr
   - target
   
+NEW_ORDER_3:
+  - fight_id
+  - event_date
+  - name
+  - dob
+  - odds
+  - height
+  - stance
+  - reach
+  - age_at_event
+  - days_till_next_fight
+  - wins_over_carrier
+  - losses_over_carrier
+  - draws_over_carrier
+  - ncs_over_carrier
+  - num_of_fights_over_1_year
+  - fight_lasted
+  - fight_lasted_mean_over_1_year
+  - knock_downs
+  - knock_downs_mean_over_1_year
+  - sig_str_lan
+  - sig_str_lan_mean_over_1_year
+  - sig_str_thr
+  - sig_str_thr_mean_over_1_year
+  - tot_str_lan
+  - tot_str_lan_mean_over_1_year
+  - tot_str_thr
+  - tot_str_thr_mean_over_1_year
+  - take_downs_lan
+  - take_downs_lan_mean_over_1_year
+  - take_downs_thr
+  - take_downs_thr_mean_over_1_year
+  - sub_atts
+  - sub_atts_mean_over_1_year
+  - rev
+  - rev_mean_over_1_year
+  - ctrl
+  - ctrl_mean_over_1_year
+  - head_str_lan
+  - head_str_lan_mean_over_1_year
+  - head_str_thr
+  - head_str_thr_mean_over_1_year
+  - body_str_lan
+  - body_str_lan_mean_over_1_year
+  - body_str_thr
+  - body_str_thr_mean_over_1_year
+  - leg_str_lan
+  - leg_str_lan_mean_over_1_year
+  - leg_str_thr
+  - leg_str_thr_mean_over_1_year
+  - dist_str_lan
+  - dist_str_lan_mean_over_1_year
+  - dist_str_thr
+  - dist_str_thr_mean_over_1_year
+  - clin_str_lan
+  - clin_str_lan_mean_over_1_year
+  - clin_str_thr
+  - clin_str_thr_mean_over_1_year
+  - ground_str_lan
+  - ground_str_lan_mean_over_1_year
+  - ground_str_thr
+  - ground_str_thr_mean_over_1_year
