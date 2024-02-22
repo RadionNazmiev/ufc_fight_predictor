@@ -18,3 +18,5 @@ optuna==3.5.0
 nbformat==5.9.2
 eli5==0.13.0
 ipywidgets==8.1.2
+plotly==5.18.0
+

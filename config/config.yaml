@@ -88,6 +88,7 @@ COLUMNS_TO_REMOVE:
   - f2_total_ground
 
 NEW_ORDER_2:
+  - fight_id
   - event_date
   - event_country
   - is_interim_fight
@@ -98,38 +99,39 @@ NEW_ORDER_2:
   - method
   - referee
   - details
+  - target
   - f1_name
   - f2_name
+  - f1_dob
+  - f2_dob
   - f1_odds
   - f2_odds
   - f1_height
   - f2_height
   - f1_stance
   - f2_stance
-  - f1_dob
-  - f2_dob
   - f1_reach
   - f2_reach
   - f1_knock_downs
   - f2_knock_downs
-  - f1_sig_str_lan
-  - f2_sig_str_lan
-  - f1_sig_str_thr
-  - f2_sig_str_thr
-  - f1_tot_str_lan
-  - f2_tot_str_lan
-  - f1_tot_str_thr
-  - f2_tot_str_thr
-  - f1_take_downs_lan
-  - f2_take_downs_lan
-  - f1_take_downs_thr
-  - f2_take_downs_thr
   - f1_sub_atts
   - f2_sub_atts
   - f1_rev
   - f2_rev
   - f1_ctrl
   - f2_ctrl
+  - f1_tot_str_lan
+  - f2_tot_str_lan
+  - f1_tot_str_thr
+  - f2_tot_str_thr
+  - f1_sig_str_lan
+  - f2_sig_str_lan
+  - f1_sig_str_thr
+  - f2_sig_str_thr
+  - f1_take_downs_lan
+  - f2_take_downs_lan
+  - f1_take_downs_thr
+  - f2_take_downs_thr
   - f1_head_str_lan
   - f2_head_str_lan
   - f1_head_str_thr
@@ -154,7 +156,6 @@ NEW_ORDER_2:
   - f2_ground_str_lan
   - f1_ground_str_thr
   - f2_ground_str_thr
-  - target
   
 NEW_ORDER_3:
   - fight_id
