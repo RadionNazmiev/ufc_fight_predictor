@@ -1,2 +1,8 @@
 venv
 catboost_info
+config/__init__.py
+config/__pycache__
+processed_data
+utils/__init__.py
+utils/__pycache__
+web_scrapers/*.csv

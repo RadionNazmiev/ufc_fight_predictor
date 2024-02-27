@@ -1,93 +1,79 @@
-WEIGHT_CLASSES:
-  125: Flyweight
-  135: Bantamweight
-  145: Featherweight
-  155: Lightweight
-  170: Welterweight
-  185: Middleweight
-  205: Light Heavyweight
-  265: Heavyweight
+COLUMNS_TO_SWAP:
+  f1_name: f2_name
+  f2_name: f1_name
+  f1_odds: f2_odds
+  f2_odds: f1_odds
+  f1_height: f2_height
+  f2_height: f1_height
+  f1_reach: f2_reach
+  f2_reach: f1_reach
+  f1_stance: f2_stance
+  f2_stance: f1_stance
+  f1_dob: f2_dob
+  f2_dob: f1_dob
+  f1_total_knock_downs: f2_total_knock_downs
+  f2_total_knock_downs: f1_total_knock_downs
+  f1_total_take_downs: f2_total_take_downs
+  f2_total_take_downs: f1_total_take_downs
+  f1_total_sub_atts: f2_total_sub_atts
+  f2_total_sub_atts: f1_total_sub_atts
+  f1_total_rev: f2_total_rev
+  f2_total_rev: f1_total_rev
+  f1_total_ctrl: f2_total_ctrl
+  f2_total_ctrl: f1_total_ctrl
+  f1_total_total_str: f2_total_total_str
+  f2_total_total_str: f1_total_total_str
+  f1_total_signif_str: f2_total_signif_str
+  f2_total_signif_str: f1_total_signif_str
+  f1_total_head: f2_total_head
+  f2_total_head: f1_total_head
+  f1_total_body: f2_total_body
+  f2_total_body: f1_total_body
+  f1_total_leg: f2_total_leg
+  f2_total_leg: f1_total_leg
+  f1_total_distance: f2_total_distance
+  f2_total_distance: f1_total_distance
+  f1_total_clinch: f2_total_clinch
+  f2_total_clinch: f1_total_clinch
+  f1_total_ground: f2_total_ground
+  f2_total_ground: f1_total_ground
 
-NEW_ORDER_1:
-  - event_country
-  - event_date
-  - is_interim_fight
-  - is_title_fight
-  - is_women_fight
-  - weight_class
-  - fight_lasted
-  - method
-  - referee
-  - details
-  - f1_name
-  - f2_name
-  - f1_odds
-  - f2_odds
-  - f1_height
-  - f2_height
-  - f1_stance
-  - f2_stance
-  - f1_dob
-  - f2_dob
-  - f1_reach
-  - f2_reach
-  - f1_total_knock_downs
-  - f2_total_knock_downs
-  - f1_total_signif_str
-  - f2_total_signif_str
-  - f1_total_total_str
-  - f2_total_total_str
-  - f1_total_take_downs
-  - f2_total_take_downs
-  - f1_total_sub_atts
-  - f2_total_sub_atts
-  - f1_total_rev
-  - f2_total_rev
-  - f1_total_ctrl
-  - f2_total_ctrl
-  - f1_total_head
-  - f2_total_head
-  - f1_total_body
-  - f2_total_body
-  - f1_total_leg
-  - f2_total_leg
-  - f1_total_distance
-  - f2_total_distance
-  - f1_total_clinch
-  - f2_total_clinch
-  - f1_total_ground
-  - f2_total_ground
-  - target
+COLUMNS_TO_RENAME:
+  total_knock_downs: knock_downs
+  total_signif_str: sig_str
+  total_total_str: tot_str
+  total_take_downs: take_downs
+  total_sub_atts: sub_atts
+  total_rev: rev
+  total_ctrl: ctrl
+  total_head: head_str
+  total_body: body_str
+  total_leg: leg_str
+  total_distance: dist_str
+  total_clinch: clin_str
+  total_ground: ground_str
 
-COLUMNS_TO_REMOVE:
-  - f1_total_knock_downs
-  - f2_total_knock_downs
-  - f1_total_signif_str
-  - f2_total_signif_str
-  - f1_total_total_str
-  - f2_total_total_str
-  - f1_total_take_downs
-  - f2_total_take_downs
-  - f1_total_sub_atts
-  - f2_total_sub_atts
-  - f1_total_rev
-  - f2_total_rev
-  - f1_total_ctrl
-  - f2_total_ctrl
-  - f1_total_head
-  - f2_total_head
-  - f1_total_body
-  - f2_total_body
-  - f1_total_leg
-  - f2_total_leg
-  - f1_total_distance
-  - f2_total_distance
-  - f1_total_clinch
-  - f2_total_clinch
-  - f1_total_ground
-  - f2_total_ground
+COLUMNS_TO_SPLIT:
+  - f1_take_downs
+  - f2_take_downs
+  - f1_tot_str
+  - f2_tot_str
+  - f1_sig_str
+  - f2_sig_str
+  - f1_head_str
+  - f2_head_str
+  - f1_body_str
+  - f2_body_str
+  - f1_leg_str
+  - f2_leg_str
+  - f1_dist_str
+  - f2_dist_str
+  - f1_clin_str
+  - f2_clin_str
+  - f1_ground_str
+  - f2_ground_str
 
-NEW_ORDER_2:
+EVENTS_COLUMNS:
   - fight_id
   - event_date
   - event_country
@@ -99,75 +85,95 @@ NEW_ORDER_2:
   - method
   - referee
   - details
-  - target
   - f1_name
   - f2_name
+  - target
+
+FIGHTER_1_COLUMNS:
+  - f1_name
   - f1_dob
-  - f2_dob
   - f1_odds
-  - f2_odds
   - f1_height
-  - f2_height
   - f1_stance
-  - f2_stance
   - f1_reach
-  - f2_reach
   - f1_knock_downs
-  - f2_knock_downs
   - f1_sub_atts
-  - f2_sub_atts
   - f1_rev
-  - f2_rev
   - f1_ctrl
-  - f2_ctrl
   - f1_tot_str_lan
-  - f2_tot_str_lan
   - f1_tot_str_thr
-  - f2_tot_str_thr
   - f1_sig_str_lan
-  - f2_sig_str_lan
   - f1_sig_str_thr
-  - f2_sig_str_thr
   - f1_take_downs_lan
-  - f2_take_downs_lan
   - f1_take_downs_thr
-  - f2_take_downs_thr
   - f1_head_str_lan
-  - f2_head_str_lan
   - f1_head_str_thr
-  - f2_head_str_thr
   - f1_body_str_lan
-  - f2_body_str_lan
   - f1_body_str_thr
-  - f2_body_str_thr
   - f1_leg_str_lan
-  - f2_leg_str_lan
   - f1_leg_str_thr
-  - f2_leg_str_thr
   - f1_dist_str_lan
-  - f2_dist_str_lan
   - f1_dist_str_thr
-  - f2_dist_str_thr
   - f1_clin_str_lan
-  - f2_clin_str_lan
   - f1_clin_str_thr
-  - f2_clin_str_thr
   - f1_ground_str_lan
-  - f2_ground_str_lan
   - f1_ground_str_thr
+
+FIGHTER_2_COLUMNS:
+  - f2_name
+  - f2_dob
+  - f2_odds
+  - f2_height
+  - f2_stance
+  - f2_reach
+  - f2_knock_downs
+  - f2_sub_atts
+  - f2_rev
+  - f2_ctrl
+  - f2_tot_str_lan
+  - f2_tot_str_thr
+  - f2_sig_str_lan
+  - f2_sig_str_thr
+  - f2_take_downs_lan
+  - f2_take_downs_thr
+  - f2_head_str_lan
+  - f2_head_str_thr
+  - f2_body_str_lan
+  - f2_body_str_thr
+  - f2_leg_str_lan
+  - f2_leg_str_thr
+  - f2_dist_str_lan
+  - f2_dist_str_thr
+  - f2_clin_str_lan
+  - f2_clin_str_thr
+  - f2_ground_str_lan
   - f2_ground_str_thr
-  
-NEW_ORDER_3:
-  - fight_id
-  - event_date
-  - name
-  - dob
-  - odds
-  - height
-  - stance
-  - reach
-  - age_at_event
-  - days_till_next_fight
+
+COLUMNS_FOR_SUBPLOTS:
+  - knock_downs
+  - sub_atts
+  - rev
+  - ctrl
+  - tot_str_lan
+  - tot_str_thr
+  - sig_str_lan
+  - sig_str_thr
+  - take_downs_lan
+  - take_downs_thr
+  - head_str_lan
+  - head_str_thr
+  - body_str_lan
+  - body_str_thr
+  - leg_str_lan
+  - leg_str_thr
+  - dist_str_lan
+  - dist_str_thr
+  - clin_str_lan
+  - clin_str_thr
+  - ground_str_lan
+  - ground_str_thr
+
+COLUMNS_TO_SHIFT:
   - wins_over_carrier
   - losses_over_carrier
   - draws_over_carrier
@@ -219,3 +225,38 @@ NEW_ORDER_3:
   - ground_str_lan_mean_over_1_year
   - ground_str_thr
   - ground_str_thr_mean_over_1_year
+
+COLUMNS_TO_GET_ROLLING_MEANS:
+  - fight_lasted
+  - knock_downs
+  - sub_atts
+  - rev
+  - ctrl
+  - tot_str_lan
+  - tot_str_thr
+  - sig_str_lan
+  - sig_str_thr
+  - take_downs_lan
+  - take_downs_thr
+  - head_str_lan
+  - head_str_thr
+  - body_str_lan
+  - body_str_thr
+  - leg_str_lan
+  - leg_str_thr
+  - dist_str_lan
+  - dist_str_thr
+  - clin_str_lan
+  - clin_str_thr
+  - ground_str_lan
+  - ground_str_thr
+
+WEIGHT_CLASSES:
+  125: Flyweight
+  135: Bantamweight
+  145: Featherweight
+  155: Lightweight
+  170: Welterweight
+  185: Middleweight
+  205: Light Heavyweight
+  265: Heavyweight
