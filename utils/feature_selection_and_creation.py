@@ -3,7 +3,16 @@ import pandas as pd
 
 
 def get_stats(fighters_df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Calculates various statistics for a given DataFrame of fighter data.
 
+    Parameters:
+        fighters_df (pd.DataFrame): A DataFrame containing fighter data, with
+            columns for "name", "target", and any other relevant data.
+
+    Returns:
+        pd.DataFrame: A DataFrame containing the calculated statistics.
+    """
     features = {
         'winning_streak': [],
         'wins_over_carrier': [],
