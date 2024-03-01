@@ -206,63 +206,73 @@ def swap_fighter_positions(
         df: pd.DataFrame, 
         columns_to_swap: dict) -> pd.DataFrame:
     """
-    Swaps the positions of 'F1' and 'F2' fighters in the DataFrame based on the given columns_to_swap mapping.
-    
-    Args:
-        df (pd.DataFrame): The input DataFrame.
-        columns_to_swap (dict): A dictionary mapping the columns to be swapped.
-        
+    Swap the positions of fighters in a DataFrame based on the outcome of matches.
+
+    Parameters:
+        df (pd.DataFrame): The DataFrame containing match data.
+        columns_to_swap (dict): A dictionary mapping original column names to new column names.
+
     Returns:
-        pd.DataFrame: The DataFrame with the fighter positions swapped.
+        pd.DataFrame: A DataFrame with fighter positions swapped based on match outcomes.
     """
 
-    result_df = pd.DataFrame(columns=df.columns)
-
-    mask = (df.target == 'F1') | (df.target == 'F2')
-
-    for index, series in df[mask].iterrows():
-        if index % 2 == 0:
-            if df.loc[index, 'target'] != 'F1':
-                series = series.rename(index=columns_to_swap)
-                series['target'] = 'F1'
-        else:
-            if df.loc[index, 'target'] != 'F2':
-                series = series.rename(index=columns_to_swap)
-                series['target'] = 'F2'
-        result_df.loc[index,:] = series 
-
-    return result_df
+    # Select rows with winners
+    winners = df[~df['target'].isin(['NC', 'Draw'])]
+    
+    # Define fighters
+    fighter_indices = [0, 1]
+    fighter_labels = ["F1", "F2"]
+    
+    # Iterate through fighters
+    for idx, fighter_label in zip(fighter_indices, fighter_labels):
+        # Select rows for the current fighter
+        fighter_df = winners.iloc[idx::2]
+        
+        # Mask for rows where the fighter lost
+        fighter_lost_mask = (fighter_df['target'] != fighter_label)
+        
+        # Select rows where fighter lost and update target
+        rows_to_swap = fighter_df[fighter_lost_mask].copy()
+        rows_to_swap['target'] = fighter_label
+        
+        # Rename columns as per swap dictionary
+        rows_swapped = rows_to_swap.rename(columns=columns_to_swap)
+        
+        # Update original DataFrame
+        df.loc[rows_swapped.index, :] = rows_swapped
+    
+    return df
 
 def remove_inch_sign(text):
-  """Removes the inch sign ("") from the end of a string, if present.
-
-  Args:
-      text: The string to process.
-
-  Returns:
-      The string with the inch sign removed, or the original string if no inch sign is found.
-  """
-  if pd.notnull(text) and text[-1] == '"':
-    return text[:-1]
-  else:
-    return text
+    """Removes the inch sign ("") from the end of a string, if present.
+  
+    Args:
+        text: The string to process.
+  
+    Returns:
+        The string with the inch sign removed, or the original string if no inch sign is found.
+    """
+    if pd.notnull(text) and text[-1] == '"':
+      return text[:-1]
+    else:
+      return text
   
 def add_fighter_odds(fights_df, fights_odds_df):
-  """
-  Adds a new column for each fighter in fights_df containing their odds,
-  obtained from fights_odds_df.
+    """
+    Adds a new column for each fighter in fights_df containing their odds,
+    obtained from fights_odds_df.
 
-  Args:
-      fights_df: A pandas dataframe containing fight information.
-      fights_odds_df: A pandas dataframe containing fighter odds information.
+    Args:
+        fights_df: A pandas dataframe containing fight information.
+        fights_odds_df: A pandas dataframe containing fighter odds information.
 
-  Returns:
-      A new pandas dataframe with the added columns.
-  """
+    Returns:
+        A new pandas dataframe with the added columns.
+    """
 
-  for index, row in fights_df.iterrows():
-    for _, col in enumerate(['f1_name', 'f2_name']):
-      odds = get_odds_for_fighter(fights_odds_df, row, col)
-      fighter = col.split('_')[0]
-      fights_df.at[index, f'{fighter}_odds'] = odds
-  return fights_df
+    for index, row in fights_df.iterrows():
+      for _, col in enumerate(['f1_name', 'f2_name']):
+        odds = get_odds_for_fighter(fights_odds_df, row, col)
+        fighter = col.split('_')[0]
+        fights_df.at[index, f'{fighter}_odds'] = odds
+    return fights_df
